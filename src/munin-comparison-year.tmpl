@@ -1,0 +1,42 @@
+<TMPL_INCLUDE NAME="partial/head.tmpl">
+<body>
+
+<TMPL_INCLUDE NAME="partial/logo_navigation_comparison.tmpl">
+
+<section class="charts">
+
+  <TMPL_LOOP NAME="CATEGORIES">
+  <div class="box" id="<TMPL_VAR ESCAPE="HTML" NAME="GROUPNAME">">
+  <h3 class="category"> <TMPL_VAR ESCAPE="HTML" NAME="GROUPNAME"></h3>
+  
+  
+        <TMPL_LOOP NAME="SERVICES">
+  
+                <div class="compare-container">
+		    <TMPL_LOOP NAME="NODES">
+
+                <div class="compare-container-nodes">
+			      
+			      <h4><a href="<TMPL_VAR ESCAPE="URL" NAME="NODENAME">/index.html">
+			          
+			    <TMPL_VAR ESCAPE="HTML" NAME="NODENAME"></a> / <TMPL_IF NAME="URL1"><a <TMPL_IF NAME="STATE_WARNING">class="warn"</TMPL_IF><TMPL_IF NAME="STATE_CRITICAL">class="crit"</TMPL_IF> href="<TMPL_VAR NAME="URL1">"></TMPL_IF><TMPL_VAR ESCAPE="HTML" NAME="LABEL"><TMPL_IF NAME="URL1"></a></TMPL_IF></h4>
+			    
+			    
+			<a title="<TMPL_VAR ESCAPE="HTML" NAME="LABEL">"/><TMPL_IF NAME="CIMGYEAR"><a href="<TMPL_VAR NAME="URL1">"><img src="<TMPL_VAR NAME="CIMGYEAR">" alt="<TMPL_VAR ESCAPE="HTML" NAME="LABEL">" <TMPL_IF NAME="IMGYEARWIDTH">width="<TMPL_VAR NAME="IMGYEARWIDTH">" </TMPL_IF> <TMPL_IF NAME="IMGYEARHEIGHT">height="<TMPL_VAR NAME="IMGYEARHEIGHT">"</TMPL_IF>/></a></TMPL_IF>
+                   </div>
+    			</TMPL_LOOP>
+    			    </div>
+            </TMPL_LOOP>
+
+      </div>
+      </TMPL_LOOP>
+
+    </section>
+
+
+            <TMPL_INCLUDE NAME="partial/bottom_navigation.tmpl">
+
+     <TMPL_INCLUDE NAME="partial/generated_by.tmpl">
+
+    </body>
+    </html>

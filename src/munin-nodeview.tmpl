@@ -1,0 +1,45 @@
+<TMPL_INCLUDE NAME="partial/head.tmpl">
+<!--
+    		BODY PART.  Start with a horizontal table thing with logo and "headline" material.
+-->
+<body>
+<TMPL_INCLUDE NAME="partial/logo_navigation.tmpl">
+
+<section class="charts">
+    <TMPL_LOOP NAME="CATEGORIES">
+        <div class="box" id="<TMPL_VAR ESCAPE="HTML" NAME="NAME">">
+        <h3 class="category"> <TMPL_VAR ESCAPE="HTML" NAME="NAME"></h3>
+      
+        <!-- 
+             Next loop, one service pr "line" going down.  Each line has to images: day and week graphs
+             and some header matter
+        -->
+        <TMPL_LOOP NAME="SERVICES">
+        <h4><a <TMPL_IF NAME="STATE_WARNING">class="warn heading"</TMPL_IF> <TMPL_IF NAME="STATE_CRITICAL">class="crit heading"</TMPL_IF> href="<TMPL_VAR NAME="URLX">"><TMPL_VAR ESCAPE="HTML" NAME="NAME"></a></h4>
+
+        <a href="<TMPL_VAR NAME="URLX">"><img <TMPL_IF NAME="STATE_WARNING">class="warn"</TMPL_IF><TMPL_IF NAME="STATE_CRITICAL">class="crit"</TMPL_IF> src="<TMPL_VAR NAME="IMGDAY">" alt="<TMPL_VAR ESCAPE="HTML" NAME="NAME">" <TMPL_IF NAME="IMGDAYWIDTH">width="<TMPL_VAR NAME="IMGDAYWIDTH">" </TMPL_IF> <TMPL_IF NAME="IMGDAYHEIGHT">height="<TMPL_VAR NAME="IMGDAYHEIGHT">"</TMPL_IF>/></a>
+        
+        
+        <a href="<TMPL_VAR NAME="URLX">"><img <TMPL_IF NAME="STATE_WARNING">class="warn"</TMPL_IF> <TMPL_IF NAME="STATE_CRITICAL">class="crit"</TMPL_IF> src="<TMPL_VAR NAME="IMGWEEK">" alt="<TMPL_VAR ESCAPE="HTML" NAME="NAME">" <TMPL_IF NAME="IMGWEEKWIDTH">width="<TMPL_VAR NAME="IMGWEEKWIDTH">" </TMPL_IF> <TMPL_IF NAME="IMGWEEKHEIGHT">height="<TMPL_VAR NAME="IMGWEEKHEIGHT">"</TMPL_IF>/></a>
+             
+            </TMPL_LOOP><!-- End of SERVICES loop -->
+
+      </div>
+
+      </TMPL_LOOP><!-- End of CATEGORIES loop -->
+    
+</section>
+
+
+<!--
+    Start of end matter: A line of "pages at the same nesting level ("peers")
+-->
+  
+     <TMPL_INCLUDE NAME="partial/bottom_navigation.tmpl">
+  
+<!--
+    End of end: A line containing the munin signature
+-->
+  <TMPL_INCLUDE NAME="partial/generated_by.tmpl">
+</body>
+</html>
