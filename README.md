@@ -1,8 +1,8 @@
 Munin Theme Oxy
 ===============
 
-This project is a [Munin][2] theme customised by [Oxyva Webdesign
-Purmerend][2]. The Munin website describes Munin as follows:
+This project is a [Munin](http://munin-monitoring.org/) theme customised by [Oxyva Webdesign
+Purmerend](http://oxyva.nl). The Munin website describes Munin as follows:
 
     Munin is a networked resource monitoring tool that can help analyze
     resource trends and "what just happened to kill our performance?"
@@ -44,6 +44,3 @@ Now copy the Munin Oxy Theme into the template folder:
     cp -r munin-theme-oxy/src /etc/munin/templates
     
 You theme is now installed.
-
-1: http://oxyva.nl
-2: http://munin-monitoring.org/
