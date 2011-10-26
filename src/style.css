@@ -453,6 +453,7 @@ li li {
 
 ul li {
   margin-left: -1.2em;
+  margin-top: 0.5em;
 }
 
 a {
@@ -472,14 +473,14 @@ a.warn:link, a.warn:visited, a.warn:active, a.warn:hover {
 	background-color: #ffd300;
 	color: #6D5A00;
 	border-radius: 3px 3px 3px 3px;
-	padding: 1px 5px;
+	padding: 0.2em 0.4em;
 }
 
 a.crit:link, a.crit:visited, a.crit:active, a.crit:hover {
 	background-color: red;
 	border-radius: 3px 3px 3px 3px;
 	color: white;
-	padding: 1px 5px;
+	padding: 0.2em 0.4em;
 	text-decoration: blink;
 }
 
